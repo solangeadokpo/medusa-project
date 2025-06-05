@@ -13,16 +13,19 @@
     "medusa"
   ],
   "scripts": {
+    "build": "medusa build --deployment",
+    "build:admin": "medusa build --admin-only",
+    "build:server": "medusa build --server-only",
+    "clean": "rm -rf .medusa dist",
+    "prebuild": "npm run clean",
     "seed": "medusa exec ./src/scripts/seed.ts",
+    "start": "medusa start",
+    "start:prod": "NODE_ENV=production medusa start",
     "dev": "medusa develop",
     "test:integration:http": "TEST_TYPE=integration:http NODE_OPTIONS=--experimental-vm-modules jest --silent=false --runInBand --forceExit",
     "test:integration:modules": "TEST_TYPE=integration:modules NODE_OPTIONS=--experimental-vm-modules jest --silent --runInBand --forceExit",
-    "test:unit": "TEST_TYPE=unit NODE_OPTIONS=--experimental-vm-modules jest --silent --runInBand --forceExit",
-    "start:prod": "medusa build && medusa start",
-    "build": "node --max-old-space-size=4096 node_modules/.bin/medusa build",
-    "start": "node --max-old-space-size=2048 node_modules/.bin/medusa start",
-    "deploy": "medusa db:migrate && yarn build && yarn start"
-  },
+    "test:unit": "TEST_TYPE=unit NODE_OPTIONS=--experimental-vm-modules jest --silent --runInBand --forceExit"
+},
   "dependencies": {
     "@medusajs/admin-sdk": "2.8.3",
     "@medusajs/cli": "2.8.3",
