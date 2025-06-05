@@ -13,8 +13,8 @@
     "medusa"
   ],
 "scripts": {
-    "build": "yarn run medusa build",
-    "start": "yarn run medusa start"
+    "build": "npx medusa build",
+    "start": "npx medusa start"
 },
   "dependencies": {
     "@medusajs/admin-sdk": "2.8.3",
