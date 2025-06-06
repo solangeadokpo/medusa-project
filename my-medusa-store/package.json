@@ -13,7 +13,7 @@
     "medusa"
   ],
   "scripts": {
-    "build": "./node_modules/.bin/medusa build && echo '--- Listing contents of build directory: ---' && ls -R build",
+    "build": "./node_modules/.bin/medusa build",
     "start": "./node_modules/.bin/medusa migrations run && ./node_modules/.bin/medusa develop"
   },
   "dependencies": {
