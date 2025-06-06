@@ -14,12 +14,14 @@
   ],
  
   "scripts": {
-    "build": "npm run build",
+    "clean": "./node_modules/.bin/rimraf dist",
+    "build": "npm run clean && npm run build:server && npm run build:admin",
+    "build:server": "npm run clean && tsc -p tsconfig.server.json",
     "build:admin": "medusa-admin build",
     "seed": "medusa seed -f ./data/seed.json",
     "start": "medusa migrations run && medusa start",
     "start:custom": "npm run build && node --preserve-symlinks --trace-warnings index.js",
-    "dev": "npm run build && medusa develop"
+    "dev": "npm run build:server && medusa develop"
   },
 
   "dependencies": {
