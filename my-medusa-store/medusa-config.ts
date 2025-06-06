@@ -14,14 +14,5 @@ module.exports = defineConfig({
       cookieSecret: process.env.COOKIE_SECRET || "supersecret",
     },
   },
-  plugins: [
-    {
-      resolve: "@medusajs/admin",
-      /** @type {import('@medusajs/admin').PluginOptions} */
-      options: {
-        autoRebuild: false, // Set to false for production
-      },
-    },
-  ],     
   modules: {},     
 });
