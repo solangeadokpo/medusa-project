@@ -14,12 +14,12 @@
   ],
  
   "scripts": {
-    "build": "npm run build:server && npm run build:admin",
+    "build": "npm run build",
     "build:admin": "medusa-admin build",
     "seed": "medusa seed -f ./data/seed.json",
     "start": "medusa migrations run && medusa start",
     "start:custom": "npm run build && node --preserve-symlinks --trace-warnings index.js",
-    "dev": "npm run build:server && medusa develop"
+    "dev": "npm run build && medusa develop"
   },
 
   "dependencies": {
