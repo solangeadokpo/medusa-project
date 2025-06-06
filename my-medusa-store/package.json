@@ -13,8 +13,8 @@
     "medusa"
   ],
   "scripts": {
-    "build": "medusa build",
-    "start": "medusa start"
+    "build": "./node_modules/.bin/medusa build",
+    "start": "./node_modules/.bin/medusa start"
   },
   "dependencies": {
     "@medusajs/admin-sdk": "2.8.3",
