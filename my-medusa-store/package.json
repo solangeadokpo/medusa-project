@@ -12,10 +12,10 @@
     "headless",
     "medusa"
   ],
-"scripts": {
-    "build": "npx medusa build",
-    "start": "npx medusa start"
-},
+  "scripts": {
+    "build": "medusa build",
+    "start": "medusa start"
+  },
   "dependencies": {
     "@medusajs/admin-sdk": "2.8.3",
     "@medusajs/cli": "2.8.3",
