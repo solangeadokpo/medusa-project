@@ -15,7 +15,7 @@
  
   "scripts": {
     "dev": "medusa develop", 
-    "start": "medusa db:setup && medusa start",
+    "start": "medusa start",
     "build": "medusa build"
   },
 
