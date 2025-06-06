@@ -14,8 +14,8 @@
   ],
  
   "scripts": {
-    "build": "npm run clean && npm run build:server && npm run build:admin",
-    "build:server": "npm run clean && tsc -p tsconfig.server.json",
+    "build": "npm run build:server && npm run build:admin",
+    "build:server": "tsc -p tsconfig.server.json",
     "build:admin": "medusa-admin build",
     "seed": "medusa seed -f ./data/seed.json",
     "start": "medusa migrations run && medusa start",
