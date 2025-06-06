@@ -12,10 +12,13 @@
     "headless",
     "medusa"
   ],
+ 
   "scripts": {
-    "build": "./node_modules/.bin/medusa build",
-    "start": "./node_modules/.bin/medusa migrations run && ./node_modules/.bin/medusa develop"
+    "dev": "medusa develop", 
+    "start": "medusa db:setup && medusa start",
+    "build": "medusa build"
   },
+
   "dependencies": {
    "@medusajs/admin-sdk": "2.8.4",
     "@medusajs/cli": "2.8.3",
