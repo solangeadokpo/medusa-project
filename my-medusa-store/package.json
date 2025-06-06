@@ -17,8 +17,8 @@
     "start": "./node_modules/.bin/medusa start"
   },
   "dependencies": {
-    "@medusajs/admin": "2.8.3",
-    "@medusajs/admin-sdk": "2.8.3",
+    "@medusajs/admin": "7.1.18",
+    "@medusajs/admin-sdk": "2.8.4",
     "@medusajs/cli": "2.8.3",
     "@medusajs/framework": "2.8.3",
     "@medusajs/medusa": "2.8.3",
