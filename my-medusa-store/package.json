@@ -13,10 +13,11 @@
     "medusa"
   ],
   "scripts": {
-    "build": "./node_modules/.bin/medusa build",
+    "build": "./node_modules/.bin/medusa build && echo '--- Listing contents of build directory: ---' && ls -R build",
     "start": "./node_modules/.bin/medusa start"
   },
   "dependencies": {
+    "@medusajs/admin": "latest",
     "@medusajs/admin-sdk": "2.8.3",
     "@medusajs/cli": "2.8.3",
     "@medusajs/framework": "2.8.3",
