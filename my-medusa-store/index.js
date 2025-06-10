@@ -1,9 +1,17 @@
 const express = require("express")
 const { GracefulShutdownServer } = require("medusa-core-utils")
 
-const loaders = require("@medusajs/medusa/dist/loaders/index").default
+// Try one of these import methods:
+// Option 1: Direct require
+const loaders = require("@medusajs/medusa/dist/loaders").default
 
-;(async() => {
+// Option 2: Alternative path (uncomment if Option 1 doesn't work)
+// const loaders = require("@medusajs/medusa/dist/loaders/index")
+
+// Option 3: Without .default (uncomment if others don't work)
+// const loaders = require("@medusajs/medusa/dist/loaders")
+
+;(async () => {
   async function start() {
     const app = express()
     const directory = process.cwd()

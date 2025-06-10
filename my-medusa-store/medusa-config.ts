@@ -41,14 +41,7 @@ const DATABASE_URL =
 const REDIS_URL = process.env.REDIS_URL || "redis://localhost:6379";
 
 const plugins = [
-  `medusa-fulfillment-manual`,
-  `medusa-payment-manual`,
-  {
-    resolve: `@medusajs/file-local`,
-    options: {
-      upload_dir: "uploads",
-    },
-  },
+  
   {
     resolve: "@medusajs/admin",
     /** @type {import('@medusajs/admin').PluginOptions} */
@@ -59,65 +52,7 @@ const plugins = [
       },
     },
   },
-  {
-    resolve: `medusa-plugin-meilisearch`,
-    options: {
-      // config object passed when creating an instance
-      // of the MeiliSearch client
-      config: {
-        host: process.env.MEILISEARCH_HOST,
-        apiKey: process.env.MEILISEARCH_API_KEY,
-      },
-      settings: {
-        products: {
-          indexSettings: {
-            searchableAttributes: ["title", "description", "variant_sku"],
-            displayedAttributes: [
-              "id",
-              "title",
-              "description",
-              "variant_sku",
-              "thumbnail",
-              "handle",
-            ],
-          },
-          primaryKey: "id",
-        },
-      },
-    },
-  },
-  {
-    resolve: `medusa-payment-stripe`,
-    options: {
-      api_key: process.env.STRIPE_API_KEY,
-      webhook_secret: process.env.STRIPE_WEBHOOK_SECRET,
-    },
-  },
-  {
-    resolve: `medusa-plugin-sendgrid`,
-    options: {
-      api_key: process.env.SENDGRID_API_KEY,
-      from: process.env.SENDGRID_FROM,
-      order_placed_template: process.env.SENDGRID_ORDER_PLACED_ID,
-      localization: {
-        "de-DE": {
-          // locale key
-          order_placed_template: process.env.SENDGRID_ORDER_PLACED_ID_LOCALIZED,
-        },
-      },
-    },
-  },
-  {
-    resolve: `medusa-file-spaces`,
-    options: {
-      spaces_url: process.env.SPACE_URL,
-      bucket: process.env.SPACE_BUCKET,
-      region: process.env.SPACE_REGION,
-      endpoint: process.env.SPACE_ENDPOINT,
-      access_key_id: process.env.SPACE_ACCESS_KEY_ID,
-      secret_access_key: process.env.SPACE_SECRET_ACCESS_KEY,
-    },
-  },
+
 ];
 
 const modules = {
@@ -151,5 +86,5 @@ const projectConfig = {
 module.exports = {
   projectConfig,
   plugins,
-  modules,
-};
+  modules
+}
